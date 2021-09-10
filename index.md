@@ -34,16 +34,13 @@
             }                                           
                                                                              
     // custom event
-var custom_data = {
+function logEvent(div){                                                                                      
+  var custom_data = {
    "Custom_Event_Property_Key1": "Custom_Event_Property_val1",
    "Custom_Event_Property_Key2": "Custom_Event_Property_val2"
-};
-
-branch.logEvent(
-    event,
-    custom_data,
-    callback (err)
-);
+  };
+ }                                                                                      
+branch.logEvent(event, custom_data, callback (err));
                                                                                       
 </script> 
 </head>
@@ -54,7 +51,7 @@ branch.logEvent(
             <br/>
             <input type="submit"/>
             <br/>
-            <div id="custom_data" ><a class="button cta-button" href="https://branch.io/">Click here for more fun.</a></div>
+            <div id="logEvent(this);" ><a class="button cta-button" href="https://branch.io/">Click here for more fun.</a></div>
         </form>
   <br/>
   <br/>
