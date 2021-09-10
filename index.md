@@ -46,7 +46,24 @@ Having trouble with Pages? Check out our [documentation](https://docs.github.com
     // init Branch
     branch.init('key_live_aoPomZRbYyZUC126qvIOViihwqlo8g6v');
   </script>
+  <script type="text/javascript">
+function sendSMS(form) {
+  branch.sendSMS(
+    form.phone.value,
+    {
+      channel: 'Website',
+      feature: 'Text-Me-The-App',
+      data: {
+        foo: 'bar'
+      }
+    },
+    { make_new_link: false }, // Default: false. If set to true, sendSMS will generate a new link even if one already exists.
+    function(err) { console.log(err); }
+  );
+}
+</script>
 </head>
 <body>
 </body>
 </html>
+
