@@ -32,17 +32,22 @@
                 branch.sendSMS(phone, linkData, options, callback);
                 form.phone.value = "";
             }
-     // custom event
-   var custom_data = {
-   "Custom_Event_Property_Key1": "Custom_Event_Property_val1",
-   "Custom_Event_Property_Key2": "Custom_Event_Property_val2"
+     // event
+var event_and_custom_data = {
+   "transaction_id": "trans_id_1234",
+   "description": "button click",
+   "registration_id": "12345"
 };
 
+var customer_event_alias = "Magic";
+
 branch.logEvent(
-    event,
-    custom_data,
-    callback (err)
-);                                                                               
+   "COMPLETE_REGISTRATION",
+   event_and_custom_data,
+   content_items,
+   customer_event_alias,
+   function(err) { console.log(err); }
+);                                                                   
   </script> 
 </head>
 <body>
@@ -52,6 +57,11 @@ branch.logEvent(
             <br/>
             <input type="submit"/>
         </form>
+  
+  <div class="button-wrapper">
+  <a class="button cta-button" href="https://branch.io/">Magic</a>
+</div>
+  
     </body>
 </html>
 
