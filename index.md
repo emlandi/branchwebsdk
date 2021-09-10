@@ -52,7 +52,7 @@ branch.track(event, custom_data, callback (err));
             <br/>
             <input type="submit"/>
             <br/>
-            <div id="track(this);" ><a class="button cta-button" href="https://branch.io/">Click here for more fun.</a></div>
+            <div id="track(this);" ><a class="button cta-button" href="https://images.app.goo.gl/ibN5ixjC4up7jswc9">Click here for more fun.</a></div>
         </form>
   <br/>
   <br/>
