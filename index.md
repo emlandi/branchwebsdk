@@ -2,17 +2,14 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
+  
   <script>
     // load Branch
     (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
     // init Branch
     branch.init('key_live_aoPomZRbYyZUC126qvIOViihwqlo8g6v');
-  </script>
-  <script type="text/javascript">
-    // load TMTA
-        (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode".split(" "), 0);
-
-        branch.init('YOUR-BRANCH-KEY');
+    
+    // init TMTA                                                                               
             function sendSMS(form) {
                 var phone = form.phone.value;
                 var linkData = {
@@ -35,16 +32,26 @@
                 branch.sendSMS(phone, linkData, options, callback);
                 form.phone.value = "";
             }
-    </script>
+     // custom event
+   var custom_data = {
+   "Custom_Event_Property_Key1": "Custom_Event_Property_val1",
+   "Custom_Event_Property_Key2": "Custom_Event_Property_val2"
+};
+
+branch.logEvent(
+    event,
+    custom_data,
+    callback (err)
+);                                                                               
+  </script> 
 </head>
 <body>
-        Send SMS
+        Send yourself a text!
         <form onsubmit="sendSMS(this); return false;">
             <input id="phone" name="phone" type="tel" placeholder="(650) 123-4567" />
             <br/>
             <input type="submit"/>
         </form>
-  <br/>
     </body>
 </html>
 
