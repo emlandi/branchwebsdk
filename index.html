@@ -11,42 +11,38 @@
     branch.init('key_live_aoPomZRbYyZUC126qvIOViihwqlo8g6v');
     
     // init TMTA                                                                               
-            function sendSMS(form) {
-                var phone = form.phone.value;
-                var linkData = {
-                    tags: [],
-                    channel: 'Website',
-                    feature: 'TextMeTheApp',
-                    data: {
-                        'foo': 'bar'
-                    }
-                };
-                var options = {};
-                var callback = function(err, result) {
-                    if (err) {
-                        alert("Sorry, something went wrong.");
-                    }
-                    else {
-                        alert("SMS sent!");
-                    }
-                };
-                branch.sendSMS(phone, linkData, options, callback);
-                form.phone.value = "";
-            }                                           
+    function sendSMS(form) {
+      var phone = form.phone.value;
+      var linkData = {
+        tags: [],
+        channel: 'Website',
+        feature: 'TextMeTheApp',
+        data: {
+         'foo': 'bar'
+        }
+      };
+      var options = {};
+      var callback = function(err, result) {
+        if (err) {
+          alert("Sorry, something went wrong.");
+        }
+        else {
+          alert("SMS sent!");
+        }
+      };
+      branch.sendSMS(phone, linkData, options, callback);
+      form.phone.value = "";
+    }                                           
                                                                              
     // track custom event
-function logEvent (form) {
- var custom_data = {
-   "Custom_Event_Property_Key1": "Custom_Event_Property_val1",
-   "Custom_Event_Property_Key2": "Custom_Event_Property_val2"
- }
- branch.logEvent(
-    event,
-    custom_data,
-    callback (err)
- )
-}                                                                                      
-</script> 
+    function logEvent (form) {
+      var custom_data = {
+        "Custom_Event_Property_Key1": "Custom_Event_Property_val1",
+        "Custom_Event_Property_Key2": "Custom_Event_Property_val2"
+      }
+      branch.logEvent(event,custom_data,callback (err))
+    }                                                                                      
+  </script> 
 </head>
 <body>
         Send yourself a text!
