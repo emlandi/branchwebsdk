@@ -31,24 +31,21 @@
                 };
                 branch.sendSMS(phone, linkData, options, callback);
                 form.phone.value = "";
-            }
-     // event
-var event_and_custom_data = {
-   "transaction_id": "trans_id_1234",
-   "description": "button click",
-   "registration_id": "12345"
+            }                                           
+                                                                             
+    // custom event
+var custom_data = {
+   "Custom_Event_Property_Key1": "Custom_Event_Property_val1",
+   "Custom_Event_Property_Key2": "Custom_Event_Property_val2"
 };
 
-var customer_event_alias = "Magic";
-
 branch.logEvent(
-   "COMPLETE_REGISTRATION",
-   event_and_custom_data,
-   content_items,
-   customer_event_alias,
-   function(err) { console.log(err); }
-);                                                                   
-  </script> 
+    event,
+    custom_data,
+    callback (err)
+);
+                                                                                      
+</script> 
 </head>
 <body>
         Send yourself a text!
@@ -56,16 +53,13 @@ branch.logEvent(
             <input id="phone" name="phone" type="tel" placeholder="(650) 123-4567" />
             <br/>
             <input type="submit"/>
+            <br/>
+            <div id="custom_data" ><a class="button cta-button" href="https://branch.io/">Click here for more fun.</a></div>
         </form>
-  
-  <div class="button-wrapper">
-  <a class="button cta-button" href="https://branch.io/">Magic</a>
-</div>
-  
-    </body>
+  <br/>
+  <br/>
+</body>
 </html>
-
-
 
 ## Welcome to GitHub Pages
 
