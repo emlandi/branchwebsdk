@@ -35,14 +35,17 @@
             }                                           
                                                                              
     // track custom event
-function track(div) {                                                                                      
-  var custom_data = {
+function logEvent (form) {
+ var custom_data = {
    "Custom_Event_Property_Key1": "Custom_Event_Property_val1",
    "Custom_Event_Property_Key2": "Custom_Event_Property_val2"
-  };
- }                                                                                      
-branch.track(event, custom_data, callback (err));
-                                                                                      
+ }
+ branch.logEvent(
+    event,
+    custom_data,
+    callback (err)
+ )
+}                                                                                      
 </script> 
 </head>
 <body>
@@ -52,7 +55,7 @@ branch.track(event, custom_data, callback (err));
             <br/>
             <input type="submit"/>
             <br/>
-            <div id="track(this);" ><a class="button cta-button" href="https://images.app.goo.gl/ibN5ixjC4up7jswc9">Click here for more fun.</a></div>
+            <div onclick="logEvent(this); return false;"><a class="button cta-button" href="https://google.com">Click here for more fun.</a></div>
         </form>
   <br/>
   <br/>
