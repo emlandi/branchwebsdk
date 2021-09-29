@@ -44,11 +44,11 @@
     
     // track custom event -- this doesn't work yet!
     function logEvent (form) {
-      var custom_data = {
-        "Custom_Event_Property_Key1": "Custom_Event_Property_val1",
-        "Custom_Event_Property_Key2": "Custom_Event_Property_val2"
+      var data = {
+        "Property_Key1": "Property_val1",
+        "Property_Key2": "Property_val2"
       }
-      branch.logEvent(event,custom_data,callback (err))
+      branch.logEvent("ADD_TO_CART",data,callback (err))
     }                                                                                      
   </script> 
 </head>
@@ -59,7 +59,7 @@
             <br/>
             <input type="submit"/>
             <br/>
-            <div onclick="logEvent(this); return false;"><a class="button cta-button" href="https://google.com">Click here for more fun.</a></div>
+            <div onclick="logEvent("ADD_TO_CART"); return false;"><a class="button cta-button" href="https://google.com">Click here for more fun.</a></div>
         </form>
   <br/>
   <br/>
