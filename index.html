@@ -43,18 +43,13 @@
       branch.track("pageview");
     
     // track custom event -- this doesn't work yet!
-    function logEvent(form) {
-      var data = {
-        "Property_Key1": "Property_val1",
-        "Property_Key2": "Property_val2"
-      }
-      branch.logEvent("ADD_TO_CART",data,callback (err));
+      branch.track("emilyEvent");
     }                                                                                      
   </script> 
 </head>
 <body>
         Send yourself a text!
-        <form onsubmit="sendSMS(this); return false;" onsubmit="logEvent(this); return false;">
+        <form onsubmit="sendSMS(this); return false;">
             <input id="phone" name="phone" type="tel" placeholder="(650) 123-4567" />
             <br/>
             <input type="submit"/>
